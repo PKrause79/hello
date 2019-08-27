@@ -11,7 +11,7 @@
     "npm": "*"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node hello.js"
   },
   "repository": {
     "type": "git",

@@ -23,7 +23,7 @@ var networkInterfaces = os.networkInterfaces( );
 app.get('/', function (req, res) {
   res.send('Hallo Signal Iduna!</br></br>Das hier ist mein erstes OpenShift-Projekt (skaliert auf 2 PODs - es wird die jeweilige IP angezeigt - bitte den Browser dazu refreshen): ' + 
            '</br></br>' +
-           String(networkInterfaces) +
+           JSON.stringify(networkInterfaces) +
            '</br></br>' +
            'Bis Montag, </br>      Patrick Krause :)');
 });

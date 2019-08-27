@@ -3,11 +3,11 @@ var app = express();
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 app.get('/', function (req, res) {
-  res.send('Hello Patrick!');
+  res.send('IP: ' + process.env.ip + 'Hallo Signal Iduna! Das hier ist mein erstes OpenShift-Projekt (skaliert auf 2 PODs und zeigt die jeweilige IP an). Bis Montag, Patrick Krause :)');
 });
 
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Hello app listening on port!' + port);
 });
 
 

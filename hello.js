@@ -2,8 +2,15 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
+var os = require('os');
+
+var networkInterfaces = os.networkInterfaces( );
+console.log( networkInterfaces );
+
 app.get('/', function (req, res) {
-  res.send('IP: ' + process.env.ip + ' Hallo Signal Iduna! Das hier ist mein erstes OpenShift-Projekt (skaliert auf 2 PODs und zeigt die jeweilige IP an). Bis Montag, Patrick Krause :)');
+  res.send('Hallo Signal Iduna! </br>Das hier ist mein erstes OpenShift-Projekt (skaliert auf 2 PODs und zeigt die jeweilige IP an). ' + 
+           networkInterfaces['eth0'][0]['address'] + 
+           'Bis Montag, Patrick Krause :)');
 });
 
 app.listen(port, function () {
